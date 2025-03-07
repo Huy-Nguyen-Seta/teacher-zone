@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import { Container, AppBar, Toolbar, Typography, Button } from '@mui/material';
 
+import './index.css';
 function App() {
   const [user, setUser] = useState(null);
 
@@ -26,32 +26,17 @@ function App() {
 
   return (
     <Router>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My App
-          </Typography>
-          {user && (
-            <Button color="inherit" onClick={handleLogout}>
-              Logout
-            </Button>
-          )}
-        </Toolbar>
-      </AppBar>
-
-      <Container maxWidth="md">
         <Routes>
           <Route
-            path="/home"
-            element={user ? <Home user={user} /> : <Navigate to="/login" />}
+            path="/"
+            element={<Home user={user} />}
           />
           <Route
             path="/login"
-            element={user ? <Navigate to="/home" /> : <Login onLogin={handleLogin} />}
+            element={<Login onLogin={handleLogin} />}
           />
           <Route path="/" element={<Navigate to="/home" />} />
         </Routes>
-      </Container>
     </Router>
   );
 }

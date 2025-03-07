@@ -1,8 +1,6 @@
+import { Button, TextInput } from 'flowbite-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Label, TextInput, Button } from 'flowbite-react';
-import { BsGoogle, BsFacebook, BsApple } from 'react-icons/bs';
-import LogoImage from './LogoImage';
 import LoginButton from './LoginButton';
 
 

@@ -1,4 +1,5 @@
 import React from "react";
+import Notification from "./Notification";
 
 const AppBar = ({ onMenuToggle }) => {
   return (
@@ -28,10 +29,11 @@ const AppBar = ({ onMenuToggle }) => {
           alt="TeacherZone Logo"
           className="h-12"
         />{" "}
-        {/* Replace with your logo path */}
       </div>
-      <span className="text-lg font-semibold">Your App Name</span>
-      <div></div>
+      <div className="flex flex-row gap-5">
+        <Notification imageSrc={"/icons/bell.png"} number={3}/>
+        <Notification imageSrc={"/icons/messages.png"} number={1}/>
+      </div>
     </nav>
   );
 };

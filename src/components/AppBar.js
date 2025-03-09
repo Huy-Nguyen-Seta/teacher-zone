@@ -1,12 +1,13 @@
 import React from "react";
 import Notification from "./Notification";
+import UserInfor from "./UserInfor";
 
-const AppBar = ({ onMenuToggle }) => {
+const AppBar = ({ toggleSidebar, user }) => {
   return (
-    <nav className="bg-white shadow-md p-4 flex justify-between items-center z-10 w-full">
+    <nav className="bg-white border border-[#E5E7EB] shadow-md p-4 flex justify-between items-center z-20 w-full fixed">
       <div className="flex flex-row justify-center items-center gap-6">
         <button
-          onClick={onMenuToggle}
+          onClick={toggleSidebar}
           className="text-gray-600 focus:outline-none focus:ring"
         >
           <svg
@@ -33,6 +34,7 @@ const AppBar = ({ onMenuToggle }) => {
       <div className="flex flex-row gap-5">
         <Notification imageSrc={"/icons/bell.png"} number={3}/>
         <Notification imageSrc={"/icons/messages.png"} number={1}/>
+        <UserInfor user={user}/>
       </div>
     </nav>
   );
